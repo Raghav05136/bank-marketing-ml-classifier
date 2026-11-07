@@ -6,7 +6,7 @@ A Portuguese bank runs phone-based direct marketing campaigns to sell term depos
 ## b. Dataset Description
 - **Source:** UCI Machine Learning Repository, Bank Marketing dataset (S. Moro, R. Laureano, P. Cortez, 2011). Citation: *Using Data Mining for Bank Direct Marketing: An Application of the CRISP-DM Methodology*, ESM 2011.
 - **File used:** `data/bank.csv` (random 10% sample of the full dataset, semicolon-separated)
-- **Instances:** 4,521 (after removing duplicates: 4,521) (minimum required: 500)
+- **Instances:** 4,521 (no duplicate rows found) (minimum required: 500)
 - **Features:** 16 input features, 15 used after removing `duration` (minimum required: 12)
 - **Target:** `y` (yes / no). Class balance: 4,000 no (88.5%) vs 521 yes (11.5%), so the data is **imbalanced**.
 - **Feature types:**
@@ -39,8 +39,8 @@ Precision, Recall and F1 are computed for the positive class (`yes`). Values are
 |---|---|
 | Logistic Regression | Highest AUC (0.738) and the best MCC (0.243) of the models. Its precision (0.53) is decent, but recall is low (0.15), so it misses most subscribers. It is a strong, interpretable baseline. |
 | Decision Tree | Depth limited to 6 to reduce overfitting. Recall (0.16) and precision (0.44) are both modest, and AUC (0.63) is the lowest of all five, so its probability ranking is the weakest. Easy to explain but less reliable than the linear model. |
-| KNN | Lowest recall (0.05) and F1 (0.09): it almost always predicts "no" because the majority class dominates the neighbourhoods. Accuracy looks good (0.88) but this is misleading on imbalanced data. Distance-based, so it also depends on feature scaling. |
-| Naive Bayes | Highest recall (0.40) and F1 (0.33) of the models, so it catches more subscribers, at the cost of lower precision (0.28) and accuracy (0.81). Its independence assumption is violated by correlated features (e.g. campaign and previous), yet it ranks clients well (AUC 0.72). Useful if the bank prefers to call more people. |
+| KNN | Lowest recall (0.05) and F1 (0.09): it rarely predicts "yes", likely because the majority class dominates the neighbourhoods. Accuracy looks good (0.88) but this is misleading on imbalanced data. Distance-based, so it also depends on feature scaling. |
+| Naive Bayes | Highest recall (0.40) and F1 (0.33) of the models, so it catches more subscribers, at the cost of lower precision (0.28) and accuracy (0.81). Its independence assumption is unlikely to hold exactly for this data, yet it ranks clients reasonably well (AUC 0.72). Useful if the bank prefers to call more people. |
 | Support Vector Machine | Highest accuracy (0.888) and precision (0.56), but recall (0.13) is low, so it is conservative and misses many subscribers. Its AUC (0.69) is reasonable. Probability outputs (needed for AUC) make it more costly to train than the other models, which is manageable at this dataset size. |
 | **Overall winner** | **Logistic Regression.** It has the best MCC (0.243) and AUC (0.738), a balanced precision and recall, and it is fast and interpretable. Accuracy is misleading here (predicting "no" always gives 88.5%), so MCC and AUC were used to decide. If the bank's priority is maximizing the number of subscribers it reaches, Naive Bayes is the better choice because it has the highest recall and F1. |
 
