@@ -1,9 +1,4 @@
-"""
-Bank Marketing (UCI / Moro et al., 2011): train 5 classifiers on the same data,
-evaluate them, and save models + test split for the Streamlit app.
 
-Run:  python train_models.py
-"""
 import os, warnings
 import joblib
 import numpy as np
