@@ -5,7 +5,7 @@ A Portuguese bank runs phone-based direct marketing campaigns to sell term depos
 
 ## b. Dataset Description
 - **Source:** UCI Machine Learning Repository, Bank Marketing dataset (S. Moro, R. Laureano, P. Cortez, 2011). Citation: *Using Data Mining for Bank Direct Marketing: An Application of the CRISP-DM Methodology*, ESM 2011.
-- **File used:** `data/bank.csv` (random 10% sample of the full dataset, semicolon-separated)
+- **File used:** `Bank Dataset/bank.csv` (random 10% sample of the full dataset, semicolon-separated)
 - **Instances:** 4,521 (no duplicate rows found) (minimum required: 500)
 - **Features:** 16 input features, 15 used after removing `duration` (minimum required: 12)
 - **Target:** `y` (yes / no). Class balance: 4,000 no (88.5%) vs 521 yes (11.5%), so the data is **imbalanced**.
