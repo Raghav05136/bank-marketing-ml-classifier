@@ -17,7 +17,7 @@ A Portuguese bank runs phone-based direct marketing campaigns to sell term depos
 - **Preprocessing:** numeric features standardized; categorical features one-hot encoded; stratified 80/20 train/test split with `random_state=42` (3,616 train / 905 test).
 
 ## c. GitHub Repository Link
-<https://github.com/your-username/bank-marketing-classifiers>
+https://github.com/Raghav05136/bank-marketing-ml-classifier
 
 ## d. Models Used
 
