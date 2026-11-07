@@ -24,7 +24,7 @@ from sklearn.metrics import (accuracy_score, roc_auc_score, precision_score,
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # ---------------- CONFIG ----------------
-DATA_PATH   = "1/bank.csv"   # 4,521 rows, semicolon-separated
+DATA_PATH   = "Bank Dataset/bank.csv"  # 4,521 rows, semicolon-separated
 SEP         = ";"
 TARGET_COL  = "y"
 DROP_COLS   = ["duration"]      # leakage: only known after the call ends
@@ -53,7 +53,7 @@ def main():
     print("Target balance:\n", df[TARGET_COL].value_counts())
 
     X, y_raw = df.drop(columns=[TARGET_COL]), df[TARGET_COL]
-    le = LabelEncoder().fit(y_raw)            # 'no' -> 0, 'yes' -> 1
+    le = LabelEncoder().fit(y_raw)            # 'no' -> 0, 'yes' -> Bank Dataset
     y = le.transform(y_raw)
     n_classes = len(le.classes_)
 
