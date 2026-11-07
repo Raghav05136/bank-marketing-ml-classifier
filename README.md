@@ -46,10 +46,10 @@ Precision, Recall and F1 are computed for the positive class (`yes`). Values are
 
 ## Project Structure
 ```
-app.py                  Streamlit app (upload CSV, pick model, metrics, confusion matrix, comparison tab)
-train_models.py         Trains and evaluates all 5 models, saves them to model/
+APP.py                  Streamlit app (upload CSV, pick model, metrics, confusion matrix, comparison tab)
+Train_Models.py         Trains and evaluates all 5 models, saves them to model/
 requirements.txt        Python dependencies
-data/bank.csv           Source dataset (UCI, semicolon-separated)
+Bank Dataset/bank.csv           Source dataset (UCI, semicolon-separated)
 test_data.csv           Held-out test split used in the app (features + y)
 model/                  Saved pipelines (*.joblib), label encoder, metrics_comparison.csv
 ```
