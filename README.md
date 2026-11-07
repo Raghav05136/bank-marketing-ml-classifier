@@ -57,8 +57,8 @@ model/                  Saved pipelines (*.joblib), label encoder, metrics_compa
 ## How to Run
 ```bash
 pip install -r requirements.txt
-python train_models.py        # trains models, writes model/ and test_data.csv
-streamlit run app.py
+python Train_Models.py        # trains models, writes model/ and test_data.csv
+streamlit run APP.py
 ```
 
 **Live app:** https://bank-marketing-ml-classifier-4pniebagm2shtlvevxcv2j.streamlit.app/
