@@ -61,4 +61,4 @@ python train_models.py        # trains models, writes model/ and test_data.csv
 streamlit run app.py
 ```
 
-**Live app:** <https://your-app-name.streamlit.app>
+**Live app:** https://bank-marketing-ml-classifier-4pniebagm2shtlvevxcv2j.streamlit.app/
